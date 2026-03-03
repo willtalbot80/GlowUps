@@ -1,0 +1,164 @@
+/* Home.css - Beauty Experts Page */
+
+.home-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+    padding: 0 0 60px;
+}
+
+.home-header {
+    text-align: center;
+    padding: 50px 20px 40px;
+    border-bottom: 2px solid #b8860b;
+}
+
+.home-title {
+    font-size: 2.8rem;
+    color: #8b4513;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.15);
+}
+
+.home-subtitle {
+    font-size: 1.1rem;
+    color: #cd7f32;
+    margin-bottom: 24px;
+}
+
+.home-search {
+    width: 100%;
+    max-width: 440px;
+    padding: 12px 20px;
+    border: 2px solid #b8860b;
+    border-radius: 30px;
+    background: #f5e6d3;
+    color: #8b4513;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.home-search::placeholder {
+    color: #cd7f32;
+    opacity: 0.7;
+}
+
+.home-search:focus {
+    border-color: #cd7f32;
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+}
+
+.home-loading {
+    text-align: center;
+    color: #cd7f32;
+    font-size: 1.2rem;
+    padding: 60px 20px;
+}
+
+/* Expert Cards Grid */
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+}
+
+@media (max-width: 900px) {
+    .experts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .experts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-title {
+        font-size: 2rem;
+    }
+}
+
+/* Expert Card */
+.expert-card {
+    background: linear-gradient(160deg, #f5e6d3 0%, #e8d5c4 100%);
+    border: 1.5px solid #b8860b;
+    border-radius: 16px;
+    padding: 32px 24px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    box-shadow: 0 4px 16px rgba(139, 69, 19, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.expert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(184, 134, 11, 0.25);
+    border-color: #cd7f32;
+}
+
+/* Expert Avatar */
+.expert-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #cd7f32;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+    margin-bottom: 4px;
+    transition: border-color 0.25s ease;
+}
+
+.expert-card:hover .expert-avatar {
+    border-color: #b8860b;
+}
+
+.expert-name {
+    font-size: 1.25rem;
+    color: #8b4513;
+    font-weight: bold;
+    margin: 0;
+}
+
+.expert-specialty {
+    font-size: 0.95rem;
+    color: #cd7f32;
+    margin: 0;
+    font-style: italic;
+}
+
+.expert-rating {
+    color: #b8860b;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.expert-rating-value {
+    color: #8b4513;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.view-profile {
+    display: inline-block;
+    margin-top: 8px;
+    color: #cd7f32;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.expert-card:hover .view-profile {
+    color: #b8860b;
+}
