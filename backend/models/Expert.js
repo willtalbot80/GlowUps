@@ -3,32 +3,26 @@
 const mongoose = require('mongoose');
 
 const expertSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    bio: { type: String },
+    profilePhoto: { type: String },
+    certifications: [{ type: String }],
+    portfolio: [{ type: String }],
+    specialties: [{ type: String }],
+    hourlyRate: { type: Number },
+    availability: [{ type: String }],
+    city: { type: String },
+    state: { type: String },
+    zipCode: { type: String },
+    address: { type: String },
+    serviceRadius: { type: Number, default: 25 },
+    coordinates: {
+        lat: { type: Number },
+        lng: { type: Number }
     },
-    bio: {
-        type: String,
-        required: true
-    },
-    expertise: {
-        type: [String],
-        required: true
-    },
-    contactInfo: {
-        email: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        phone: String
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+    createdAt: { type: Date, default: Date.now }
 });
 
-const Expert = mongoose.model('Expert', expertSchema);
-
-module.exports = Expert;
+module.exports = mongoose.model('Expert', expertSchema);
