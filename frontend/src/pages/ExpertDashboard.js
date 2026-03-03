@@ -40,7 +40,7 @@ const ExpertDashboard = () => {
             axios.get(`${API}/experts/${id}/appointments`).catch(() => ({ data: [] })),
             axios.get(`${API}/experts/${id}`).catch(() => ({ data: {} })),
         ]).then(([apptRes, expertRes]) => {
-            setAppointments(apptRes.data);
+            setAppointments(Array.isArray(apptRes.data) ? apptRes.data : []);
             setPricingItems(expertRes.data.pricingItems || []);
         }).finally(() => setLoading(false));
     }, [currentUser, history]);

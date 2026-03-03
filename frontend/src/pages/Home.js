@@ -14,7 +14,7 @@ const Home = () => {
 
     useEffect(() => {
         axios.get(`${API}/experts`)
-            .then(res => setFeaturedExperts(res.data.slice(0, 3)))
+            .then(res => setFeaturedExperts(Array.isArray(res.data) ? res.data.slice(0, 3) : []))
             .catch(() => setFeaturedExperts([]))
             .finally(() => setLoading(false));
     }, []);

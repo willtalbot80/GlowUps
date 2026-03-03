@@ -29,7 +29,7 @@ const Reviews = () => {
         if (prefilledExpertId) {
             setLoading(true);
             axios.get(`${API}/reviews/expert/${prefilledExpertId}`)
-                .then(res => setReviews(res.data))
+                .then(res => setReviews(Array.isArray(res.data) ? res.data : []))
                 .catch(() => {})
                 .finally(() => setLoading(false));
         }

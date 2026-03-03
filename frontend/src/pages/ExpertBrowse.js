@@ -36,7 +36,7 @@ const ExpertBrowse = () => {
             if (filters.maxPrice) params.maxPrice = filters.maxPrice;
 
             const res = await axios.get(`${API}/experts`, { params });
-            setExperts(res.data);
+            setExperts(Array.isArray(res.data) ? res.data : []);
         } catch (err) {
             setError('Unable to load experts. Please try again.');
             setExperts([]);

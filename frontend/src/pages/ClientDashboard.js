@@ -24,7 +24,7 @@ const ClientDashboard = () => {
     useEffect(() => {
         if (!currentUser) { history.push('/login'); return; }
         axios.get(`${API}/appointments`)
-            .then(res => setAppointments(res.data))
+            .then(res => setAppointments(Array.isArray(res.data) ? res.data : []))
             .catch(() => setError('Failed to load appointments'))
             .finally(() => setLoading(false));
     }, [currentUser, history]);
