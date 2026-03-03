@@ -1,0 +1,166 @@
+/* ExpertDetail.css - Expert Profile Detail Page */
+
+.detail-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+    padding: 40px 20px 60px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 28px;
+    padding: 10px 22px;
+    background: transparent;
+    border: 2px solid #b8860b;
+    border-radius: 30px;
+    color: #8b4513;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.back-btn:hover {
+    background: #b8860b;
+    color: #f5e6d3;
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+}
+
+.detail-loading,
+.detail-error {
+    text-align: center;
+    color: #cd7f32;
+    font-size: 1.2rem;
+    padding: 60px 20px;
+}
+
+/* Detail Card */
+.detail-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: linear-gradient(160deg, #f5e6d3 0%, #e8d5c4 100%);
+    border: 1.5px solid #b8860b;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+}
+
+/* Header section with photo + info */
+.detail-header {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1.5px solid #b8860b;
+}
+
+@media (max-width: 580px) {
+    .detail-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .detail-card {
+        padding: 24px 16px;
+    }
+}
+
+.detail-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #cd7f32;
+    box-shadow: 0 6px 18px rgba(139, 69, 19, 0.25);
+    flex-shrink: 0;
+}
+
+.detail-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-name {
+    font-size: 2rem;
+    color: #8b4513;
+    margin: 0;
+}
+
+.detail-specialty {
+    font-size: 1.1rem;
+    color: #cd7f32;
+    font-style: italic;
+    margin: 0;
+}
+
+.detail-rating {
+    color: #b8860b;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-rating-value {
+    color: #8b4513;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.detail-experience {
+    color: #8b4513;
+    font-size: 0.95rem;
+}
+
+.detail-experience strong {
+    color: #cd7f32;
+}
+
+/* Content sections */
+.detail-section {
+    margin-bottom: 28px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-section-title {
+    font-size: 1.3rem;
+    color: #b8860b;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(184, 134, 11, 0.4);
+}
+
+.detail-bio {
+    color: #8b4513;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Certifications list */
+.detail-certifications {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-cert-item {
+    padding: 10px 18px;
+    background: rgba(184, 134, 11, 0.1);
+    border: 1px solid rgba(184, 134, 11, 0.35);
+    border-radius: 8px;
+    color: #8b4513;
+    font-size: 0.95rem;
+}
+
+.detail-cert-item::before {
+    content: '✓ ';
+    color: #b8860b;
+    font-weight: bold;
+}
