@@ -1,1 +1,1 @@
-# Agents module
+# Example agents
