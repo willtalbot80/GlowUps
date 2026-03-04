@@ -1,5 +1,32 @@
 # GlowUps Project
 
+## 🌐 Live Preview
+**[https://willtalbot80.github.io/GlowUps](https://willtalbot80.github.io/GlowUps)**
+
+The app is automatically deployed to GitHub Pages on every push to `main`.
+
+> **⚠️ First-time setup required** — the app won't be visible until you complete the 3 steps below:
+>
+> ### Step 1 — Merge the deploy PR
+> Merge the open pull request that adds the `.github/workflows/deploy.yml` file into `main`.  
+> This puts the deploy workflow on `main` so GitHub Actions can run it.
+>
+> ### Step 2 — Enable GitHub Pages
+> 1. Go to **Settings → Pages** in this repository.
+> 2. Under **Source**, select **Deploy from a branch**.
+> 3. Set **Branch** to `gh-pages` and folder to `/(root)`.
+> 4. Click **Save**.
+>
+> *(If `gh-pages` isn't in the list yet, complete Step 1 first so the Action creates it.)*
+>
+> ### Step 3 — Trigger the first deployment (if needed)
+> After merging, the deploy workflow runs automatically.  
+> If it doesn't appear in **Actions**, trigger it manually:
+> 1. Go to **Actions → Deploy to GitHub Pages**.
+> 2. Click **Run workflow → Run workflow**.
+>
+> Once the workflow completes with a green ✅, the live URL above will work.
+
 ## Overview
 GlowUps is a project designed to enhance user experience through various innovative features. This repository contains all the necessary code, configuration files, and resources to get started.
 
@@ -49,6 +76,25 @@ Follow these steps to set up the GlowUps project on your local machine:
 
 ## Usage
 Provide instructions on how to use the features of the GlowUps project here.
+
+## 🔒 Branch Protection Setup (one-time admin step)
+
+GitHub shows a "classic branch protections not configured" warning until you enable protection rules for the `main` branch.  To clear the warning:
+
+1. Go to **Settings → Branches** in this repository.
+2. Click **Add classic branch protection rule**.
+3. Set **Branch name pattern** to `main`.
+4. Enable the following rules:
+   - ✅ **Require a pull request before merging** — no direct pushes to `main`
+     - ✅ **Require approvals** (1 reviewer)
+     - ✅ **Require review from Code Owners** (uses `.github/CODEOWNERS`)
+   - ✅ **Require status checks to pass before merging**
+     - Search for and add the **`build`** check (provided by `.github/workflows/ci.yml`)
+     - ✅ **Require branches to be up to date before merging**
+   - ✅ **Do not allow bypassing the above settings**
+5. Click **Create** (or **Save changes**).
+
+Once saved, the security warning disappears and all PRs to `main` will require a passing CI build and at least one approved review before they can be merged.
 
 ## Contributing
 If you would like to contribute to this project, please follow these guidelines:
