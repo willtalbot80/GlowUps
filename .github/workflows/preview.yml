@@ -1,0 +1,50 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        if: github.event.action != 'closed'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        working-directory: frontend
+        run: npm ci --legacy-peer-deps
+
+      - name: Build
+        if: github.event.action != 'closed'
+        working-directory: frontend
+        env:
+          CI: false
+          PUBLIC_URL: /GlowUps/pr-preview/pr-${{ github.event.number }}
+        run: npm run build
+
+      - name: Deploy PR preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: frontend/build
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
