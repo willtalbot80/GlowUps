@@ -1,5 +1,10 @@
 # GlowUps Project
 
+## 🌐 Live Preview
+**[https://willtalbot80.github.io/GlowUps](https://willtalbot80.github.io/GlowUps)**
+
+The app is automatically deployed to GitHub Pages on every push to `main`.
+
 ## Overview
 GlowUps is a project designed to enhance user experience through various innovative features. This repository contains all the necessary code, configuration files, and resources to get started.
 
