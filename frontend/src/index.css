@@ -1,0 +1,19 @@
+/* Added by demo PR: demo/frontend-ui */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles using GlowUps palette */
+body {
+  background-color: #F5F1ED; /* cream */
+  color: #8B6F47;             /* bronze */
+  font-family: 'Georgia', serif;
+}
+
+h1, h2, h3 {
+  color: #B87333; /* copper */
+}
+
+a {
+  color: #D4AF37; /* gold */
+}
