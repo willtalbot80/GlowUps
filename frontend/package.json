@@ -5,20 +5,25 @@
   "homepage": "https://willtalbot80.github.io/GlowUps",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
+    "@craco/craco": "^6.4.5",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.36",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "4.0.3",
-    "tailwindcss": "^2.2.19",
-    "postcss": "^7.0.36",
-    "autoprefixer": "^10.3.7"
+    "tailwindcss": "^2.2.19"
   },
-  "devDependencies": {},
   "keywords": [],
   "author": "willtalbot80",
   "license": "ISC",
