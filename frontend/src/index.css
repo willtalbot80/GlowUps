@@ -1,0 +1,16 @@
+/* Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles using GlowUps palette */
+body {
+  background-color: #F5F1ED; /* cream */
+  color: #8B6F47;            /* bronze */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reusable button style */
+.btn-gold {
+  @apply bg-gold text-white font-semibold py-2 px-6 rounded-xl hover:bg-copper transition-colors duration-200;
+}
