@@ -1,11 +1,13 @@
 import React from "react";
 import "../index.css";
 
+const BASE = process.env.PUBLIC_URL || '';
+
 const mockups = [
-  { src: "/images/mock1.jpg", alt: "GlowUps mockup 1", label: "Hair Expert" },
-  { src: "/images/mock2.jpg", alt: "GlowUps mockup 2", label: "Nails Expert" },
-  { src: "/images/mock3.jpg", alt: "GlowUps mockup 3", label: "Eyebrows Expert" },
-  { src: "/images/mock4.jpg", alt: "GlowUps mockup 4", label: "Facials Expert" }
+  { src: `${BASE}/images/mock1.jpg`, alt: "GlowUps mockup 1", label: "Hair Expert" },
+  { src: `${BASE}/images/mock2.jpg`, alt: "GlowUps mockup 2", label: "Nails Expert" },
+  { src: `${BASE}/images/mock3.jpg`, alt: "GlowUps mockup 3", label: "Eyebrows Expert" },
+  { src: `${BASE}/images/mock4.jpg`, alt: "GlowUps mockup 4", label: "Facials Expert" }
 ];
 
 export default function Home() {
