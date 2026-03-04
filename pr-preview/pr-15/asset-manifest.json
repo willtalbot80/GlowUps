@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/GlowUps/pr-preview/pr-15/static/css/main.ae666ec8.chunk.css",
+    "main.js": "/GlowUps/pr-preview/pr-15/static/js/main.b21d8393.chunk.js",
+    "main.js.map": "/GlowUps/pr-preview/pr-15/static/js/main.b21d8393.chunk.js.map",
+    "runtime-main.js": "/GlowUps/pr-preview/pr-15/static/js/runtime-main.1cf70ef9.js",
+    "runtime-main.js.map": "/GlowUps/pr-preview/pr-15/static/js/runtime-main.1cf70ef9.js.map",
+    "static/js/2.3c7ff5fc.chunk.js": "/GlowUps/pr-preview/pr-15/static/js/2.3c7ff5fc.chunk.js",
+    "static/js/2.3c7ff5fc.chunk.js.map": "/GlowUps/pr-preview/pr-15/static/js/2.3c7ff5fc.chunk.js.map",
+    "index.html": "/GlowUps/pr-preview/pr-15/index.html",
+    "static/css/main.ae666ec8.chunk.css.map": "/GlowUps/pr-preview/pr-15/static/css/main.ae666ec8.chunk.css.map",
+    "static/js/2.3c7ff5fc.chunk.js.LICENSE.txt": "/GlowUps/pr-preview/pr-15/static/js/2.3c7ff5fc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cf70ef9.js",
+    "static/js/2.3c7ff5fc.chunk.js",
+    "static/css/main.ae666ec8.chunk.css",
+    "static/js/main.b21d8393.chunk.js"
+  ]
+}
