@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ExpertBrowse = () => {
   const [experts, setExperts] = useState([]);
@@ -19,6 +19,16 @@ const ExpertBrowse = () => {
     expert.name.toLowerCase().includes(filter.toLowerCase())
   );
 
+  const handleBookAppointment = (expert) => {
+    // Navigate to booking flow for the expert
+    window.location.href = `/book/${expert._id}`;
+  };
+
+  const handleEnquire = (expert) => {
+    // Open enquiry contact (e.g. email)
+    window.location.href = `mailto:${expert.contactInfo?.email}?subject=${encodeURIComponent('Enquiry')}`;
+  };
+
   return (
     <div>
       <h1>Browse Beauty Experts</h1>
@@ -30,7 +40,18 @@ const ExpertBrowse = () => {
       />
       <ul>
         {filteredExperts.map((expert) => (
-          <li key={expert.id}>{expert.name}</li>
+          <li key={expert._id}>
+            {expert.name}
+            {expert.allowBooking !== false ? (
+              <button onClick={() => handleBookAppointment(expert)}>
+                Book Appointment
+              </button>
+            ) : (
+              <button onClick={() => handleEnquire(expert)}>
+                Enquire
+              </button>
+            )}
+          </li>
         ))}
       </ul>
     </div>
