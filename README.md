@@ -55,6 +55,25 @@ Follow these steps to set up the GlowUps project on your local machine:
 ## Usage
 Provide instructions on how to use the features of the GlowUps project here.
 
+## 🔒 Branch Protection Setup (one-time admin step)
+
+GitHub shows a "classic branch protections not configured" warning until you enable protection rules for the `main` branch.  To clear the warning:
+
+1. Go to **Settings → Branches** in this repository.
+2. Click **Add classic branch protection rule**.
+3. Set **Branch name pattern** to `main`.
+4. Enable the following rules:
+   - ✅ **Require a pull request before merging** — no direct pushes to `main`
+     - ✅ **Require approvals** (1 reviewer)
+     - ✅ **Require review from Code Owners** (uses `.github/CODEOWNERS`)
+   - ✅ **Require status checks to pass before merging**
+     - Search for and add the **`build`** check (provided by `.github/workflows/ci.yml`)
+     - ✅ **Require branches to be up to date before merging**
+   - ✅ **Do not allow bypassing the above settings**
+5. Click **Create** (or **Save changes**).
+
+Once saved, the security warning disappears and all PRs to `main` will require a passing CI build and at least one approved review before they can be merged.
+
 ## Contributing
 If you would like to contribute to this project, please follow these guidelines:
 - Fork the repository.
