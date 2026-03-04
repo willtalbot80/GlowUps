@@ -1,0 +1,32 @@
+/* Demo scaffold — Tailwind base imports and custom palette styles. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom palette helpers matching tailwind.config.js colors */
+body {
+  background-color: #F5F1ED; /* cream */
+  color: #8B6F47;            /* bronze */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-gold {
+  @apply bg-gold text-white font-semibold py-2 px-6 rounded-xl hover:opacity-90 transition;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow p-6;
+}
+
+/* Placeholder image block for expert avatars */
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D4AF37, #B87333);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
