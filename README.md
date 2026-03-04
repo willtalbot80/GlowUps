@@ -18,6 +18,19 @@ Every open PR gets its own live preview URL. After pushing to a PR branch:
 
 The preview is automatically removed when the PR is closed or merged.
 
+> **⚠️ CI shows "action_required" and never runs?**
+>
+> GitHub requires a human to approve workflow runs triggered by bots (like the Copilot coding agent). To fix this permanently:
+>
+> **Option A — approve once:** Go to the **Actions** tab in this repository, click the blocked run, then click **"Approve and run"**. GitHub remembers trusted contributors, so future runs from the same bot won't need approval again.
+>
+> **Option B — change the approval policy (recommended):**
+> 1. Go to **Settings → Actions → General** in this repository.
+> 2. Under **"Fork pull request workflows from outside collaborators"**, change the setting to **"Require approval for first-time contributors only"**.
+> 3. Click **Save**.
+>
+> After approving once (Option A) or updating the policy (Option B), all future CI and PR Preview workflows will run automatically.
+
 ## Overview
 GlowUps is a project designed to enhance user experience through various innovative features. This repository contains all the necessary code, configuration files, and resources to get started.
 
