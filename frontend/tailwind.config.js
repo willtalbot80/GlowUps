@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // Purge unused styles in production; scans all JS/JSX source files
+  purge: ['./src/**/*.{js,jsx}', './public/index.html'],
   theme: {
     extend: {
       colors: {
