@@ -1,0 +1,33 @@
+/* Demo scaffold — src/index.css
+   Tailwind base layers + small custom overrides matching the project palette. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default body background uses the cream brand colour */
+body {
+  background-color: #F5F1ED; /* cream */
+  color: #3d2c1e;
+  font-family: 'Georgia', serif;
+}
+
+/* Reusable card shadow helper */
+.card-shadow {
+  box-shadow: 0 2px 8px rgba(139, 111, 71, 0.15);
+}
+
+/* Simple avatar placeholder rectangle */
+.avatar-placeholder {
+  background: linear-gradient(135deg, #E8DCC8 0%, #D4AF37 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #8B6F47;
+}
