@@ -1,1 +1,18 @@
-import React from 'react';\nimport { BrowserRouter as Router, Route, Switch } from 'react-router-dom';\nimport Authentication from './pages/Authentication';\nimport Client from './pages/Client';\nimport Expert from './pages/Expert';\nimport './App.css';\n\nconst App = () => {\n  return (\n    <Router>\n      <Switch>\n        <Route path='/' exact component={Authentication} />\n        <Route path='/client' component={Client} />\n        <Route path='/expert' component={Expert} />\n      </Switch>\n    </Router>\n  );\n};\n\nexport default App;
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import ExpertBrowse from './pages/ExpertBrowse.js';
+import './index.css';
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/experts' component={ExpertBrowse} />
+      </Switch>
+    </Router>
+  );
+};
+
+export default App;
