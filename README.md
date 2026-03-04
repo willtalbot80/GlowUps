@@ -5,27 +5,18 @@
 
 The app is automatically deployed to GitHub Pages on every push to `main`.
 
-> **⚠️ First-time setup required** — the app won't be visible until you complete the 3 steps below:
->
-> ### Step 1 — Merge the deploy PR
-> Merge the open pull request that adds the `.github/workflows/deploy.yml` file into `main`.  
-> This puts the deploy workflow on `main` so GitHub Actions can run it.
->
-> ### Step 2 — Enable GitHub Pages
-> 1. Go to **Settings → Pages** in this repository.
-> 2. Under **Source**, select **Deploy from a branch**.
-> 3. Set **Branch** to `gh-pages` and folder to `/(root)`.
-> 4. Click **Save**.
->
-> *(If `gh-pages` isn't in the list yet, complete Step 1 first so the Action creates it.)*
->
-> ### Step 3 — Trigger the first deployment (if needed)
-> After merging, the deploy workflow runs automatically.  
-> If it doesn't appear in **Actions**, trigger it manually:
-> 1. Go to **Actions → Deploy to GitHub Pages**.
-> 2. Click **Run workflow → Run workflow**.
->
-> Once the workflow completes with a green ✅, the live URL above will work.
+### Previewing a pull request
+
+Every open PR gets its own live preview URL. After pushing to a PR branch:
+
+1. Wait for the **PR Preview** GitHub Actions workflow to finish (usually ~1 min).
+2. A comment will appear on the PR that looks like:
+
+   > 🔍 Preview available at **https://willtalbot80.github.io/GlowUps/pr-preview/pr-&lt;number&gt;/**
+
+3. Click the link to see your changes live before merging.
+
+The preview is automatically removed when the PR is closed or merged.
 
 ## Overview
 GlowUps is a project designed to enhance user experience through various innovative features. This repository contains all the necessary code, configuration files, and resources to get started.
