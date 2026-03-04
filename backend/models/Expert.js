@@ -23,6 +23,10 @@ const expertSchema = new mongoose.Schema({
         },
         phone: String
     },
+    allowBooking: {
+        type: Boolean,
+        default: true
+    },
     createdAt: {
         type: Date,
         default: Date.now
