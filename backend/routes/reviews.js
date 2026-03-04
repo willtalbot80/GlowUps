@@ -1,17 +1,37 @@
 const express = require('express');
 const router = express.Router();
+const rateLimit = require('express-rate-limit');
+const Review = require('../models/Review');
+
+const reviewLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    message: { message: 'Too many requests, please try again later.' }
+});
 
 // GET endpoint to retrieve all reviews
-router.get('/', (req, res) => {
-    // Logic to get reviews will go here
-    res.send('List of reviews');
+router.get('/', reviewLimiter, async (req, res) => {
+    try {
+        const reviews = await Review.find();
+        res.json(reviews);
+    } catch (err) {
+        res.status(500).json({ message: 'Failed to retrieve reviews', error: err.message });
+    }
 });
 
 // POST endpoint to create a new review
-router.post('/', (req, res) => {
-    // Logic to create a review will go here
-    const newReview = req.body;
-    res.status(201).send(`Review created: ${JSON.stringify(newReview)}`);
+router.post('/', async (req, res) => {
+    const { expertId, rating, comment } = req.body;
+    if (!expertId || rating == null || rating < 1 || rating > 5) {
+        return res.status(400).json({ message: 'expertId is required and rating must be between 1 and 5' });
+    }
+    try {
+        const review = new Review({ expertId, rating, comment });
+        await review.save();
+        res.status(201).json(review);
+    } catch (err) {
+        res.status(500).json({ message: 'Failed to create review', error: err.message });
+    }
 });
 
 module.exports = router;
